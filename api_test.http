@@ -29,3 +29,19 @@ Content-Type: application/json
 # Eliminar usuario con id=1
 DELETE {{URL}}/eliminar_usuario/1
 
+
+
+###
+# Crear usuario
+POST {{URL}}/dieta
+Content-Type: application/json
+
+{
+    "id_dieta": 1,
+    "nombre": "Dieta del caballo",
+    "descripcion": "paja y agua",
+    "filtro_carbohidratos": "muchos",
+    "filtro_proteina": "1000g de proteina",
+    "filtro_condicion": "caballo",
+
+}
