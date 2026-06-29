@@ -115,6 +115,41 @@ def actualizar_usuario(id):
     response = jsonify({"resultado":"Usuario no activo"})
     return response
 
+##################################################################
+
+#PROYECTO
+
+@app.route("/dieta", methods=["POST"])
+@cross_origin()
+def nueva_dieta():
+    id_dieta = request.json["id_dieta"]
+    nombre = request.json["nombre"]
+    descripcion = request.json["descripcion"]
+    filtro_carbohidratos = request.json["filtro_carbohidratos"]
+    filtro_proteina = request.json["filtro_proteina"]
+    filtro_condicion = request.json["filtro_condicion"]
+
+    cursor = mysql.connection.cursor()
+
+    sql = "INSERT INTO dieta(id_dieta, nombre, descripcion, filtro_carbohidratos, filtro_proteina, filtro_condicion) values(%s, %s, %s, %s, %s, %s);"
+    cursor.execute(sql, ( id_dieta, nombre, descripcion, filtro_carbohidratos, filtro_proteina, filtro_condicion))
+
+
+    mysql.connection.commit()
+
+    cursor.close()
+    response = make_response()
+
+    response = jsonify({"resultado":"Se agrego nueva receta"})
+    return response
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

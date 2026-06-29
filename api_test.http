@@ -1,4 +1,4 @@
-@URL = https://web-production-0f156.up.railway.app
+@URL = https://railwaycoman-production.up.railway.app
 
 ###
 # Obtener todos los usuarios
@@ -10,8 +10,8 @@ POST {{URL}}/nuevo_usuario
 Content-Type: application/json
 
 {
-    "nombre": "Juan",
-    "apellido": "Perez",
+    "nombre": "pablo",
+    "apellido": "nbavas",
     "provincia": "Buenos Aires"
 }
 
@@ -28,3 +28,4 @@ Content-Type: application/json
 ###
 # Eliminar usuario con id=1
 DELETE {{URL}}/eliminar_usuario/1
+
